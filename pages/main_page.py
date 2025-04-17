@@ -9,6 +9,7 @@ from data import INGREDIENTS_INDEXES, ORDER_NUM_PREFIX, STUB
 from locators import MainPageLocators as M
 from locators import HeaderLocators as H
 from pages.base_page import BasePage
+from pages.login_page import LoginPage as l_page
 
 
 class MainPage(BasePage):
@@ -104,9 +105,9 @@ class MainPage(BasePage):
         self.drag_to(ingredient, basket)
 
     @allure.step('Create order and get its order number')
-    def make_order(self, login_page, test_user):
+    def make_order(self, test_user):
         self.go_to_user_profile()
-        login_page.login(**test_user)
+        l_page(self.driver).login(**test_user)
         basket = self.get_basket()
         for slicer in INGREDIENTS_INDEXES.values():
             self.add_ingredient_to_basket(self.get_ingredient(slicer), basket)

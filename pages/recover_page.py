@@ -36,6 +36,11 @@ class RecoverPage(BasePage):
         self.click_element(H.PERSONAL_ACCOUNT_LINK)
         self.click_element(L.RECOVER_PASS_LINK)
 
+    @allure.step('Open Recovery Password page')
+    def open_recover_page2(self):
+        self.click_element(H.PERSONAL_ACCOUNT_LINK)
+        self.click_element(L.RECOVER_PASS_LINK)
+
     @allure.step('Go to Confirm password change page')
     def confirm_password_change(self, email):
         self.open_recover_page()

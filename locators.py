@@ -5,7 +5,6 @@ from selenium.webdriver.common.by import By
 class LoginPageLocators:
     EMAIL_INPUT = By.XPATH, '//input[@name="name"]'
     ENTER_BTN = By.XPATH, '//button[text()="Войти"]'
-    ENTRANCE_TITLE = By.XPATH, '//h2[text()="Вход"]'
     PASSWORD_INPUT = By.XPATH, '//input[@name="Пароль"]'
     RECOVER_PASS_LINK = By.XPATH, '//a[text()="Восстановить пароль"]'
 
@@ -29,6 +28,7 @@ class ProfilePageLocators:
     MESSAGE = By.XPATH, '//p[text()="В этом разделе вы можете изменить свои персональные данные"]'
     ORDER_NUMBER = By.XPATH, '//li[contains(@class, "OrderHistory_listItem") and position()=1]//p[contains(@class, "digits")]'
     ORDERS_HISTORY_LINK = By.XPATH, '//a[text()="История заказов"]'
+    ENTRANCE_TITLE = By.XPATH, '//h2[text()="Вход"]'
 
 
 class MainPageLocators:
